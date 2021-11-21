@@ -52,4 +52,22 @@ In the last output we can see that all possible kmers (all possible 3 nucelotide
 
 There are 9 possible kmers not found.  
 
+The method `frequencies_histogram()` returns a histogram:  
 
+```
+>>> dna.frequencies_histogram(3, 8)
+(array([ 4,  8, 11,  7, 14, 11,  7,  2]), array([58.   , 63.125, 68.25 , 73.375, 78.5  , 83.625, 88.75 , 93.875,
+       99.   ]))
+```
+
+In the latter example, we can see that there are 4 kmers that appear between 58 and 63 times, 8 kmers that have been observed between63 and 68 times, and so forth. The method takes two arguments: the first one is the kmer length and the second one is the number of bins in the histogram.  
+
+Finally, we can compute the lower and upper tails probabilities of the frequency of an observed kmer with the method `calculate_tail_probability()`:  
+
+```
+>>> dna.calculate_tail_probability(3, 88)
+(0.8125, 0.1875)
+
+```
+
+It returns a tuple with with lower and upper tails probability. In the latter example, we calculate the tails probabilities for a frequency of 88 (88 times we have counted a determined kmer; second argument). The kmer length is 3 again (first argument).  
