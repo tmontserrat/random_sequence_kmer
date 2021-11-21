@@ -103,11 +103,3 @@ class Sequence:
 
         # Return a tupple with the lower and upper tail probabilities
         return (lower_tail, upper_tail)
-
-dna = Sequence(5000)
-
-print(sum(dna.kmer_distribution(3)[0]))
-print(dna.kmer_distribution(3))
-print(dna.calculate_tail_probability(3, 90))
-print(dna.frequencies_histogram(3, 8)[0])
-print(dna.frequencies_histogram(3, 8)[1])
